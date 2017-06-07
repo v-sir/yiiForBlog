@@ -14,6 +14,7 @@ use yii\widgets\LinkPager;
 $tid=Yii::$app->request->get('tid');
 $like=Yii::$app->request->get('like');
 $dislike=Yii::$app->request->get('dislike');
+$user_id=Yii::$app->request->get('user_id');
 $viewCount=new models\Stat();
 $viewCount->view($tid,$like,$dislike);
 $getView=$viewCount->getView($tid);
@@ -26,27 +27,18 @@ $Article=$Article->getArticle($tid);
 $info=$Article;
 $headImgURL=new models\UserInfo;
 $UserInfo=new models\UserInfo;
-if(Yii::$app->user->isGuest ){
-    $headImgURL='./image/noHeadImg.jpg';
-}
-else{
-    $headImgURL=$headImgURL->getHeadImgUrl(Yii::$app->user->identity->getId());
-    $UserInfo=$UserInfo->getUserInfo(Yii::$app->user->identity->getId());
-    $commentInfo=new models\Comment();
-    $commentInfo=$commentInfo->getComment($tid);
-    $count=count($commentInfo);
-    $pagination = new Pagination([
-        'defaultPageSize' => 5,
-        'totalCount' =>  $count,
-    ]);
-    $commentInfo=new models\Comment();
-    $commentInfo=$commentInfo->getComment($tid,$pagination->offset,$pagination->limit);
-   // var_dump($UserInfo);
+$headImgURL=$headImgURL->getHeadImgUrl($user_id);
+$UserInfo=$UserInfo->getUserInfo($user_id);
 
-
-
-}
-
+$commentInfo=new models\Comment();
+$commentInfo=$commentInfo->getComment($tid);
+$count=count($commentInfo);
+$pagination = new Pagination([
+    'defaultPageSize' => 5,
+    'totalCount' =>  $count,
+]);
+$commentInfo=new models\Comment();
+$commentInfo=$commentInfo->getComment($tid,$pagination->offset,$pagination->limit);
 
 if(empty($headImgURL)) $headImgURL='./image/noHeadImg.jpg';
 

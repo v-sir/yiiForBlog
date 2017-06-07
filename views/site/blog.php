@@ -65,7 +65,7 @@ $Article=$Article->getArticleByUserId($tid=null,$pagination->offset,$pagination-
                             <a href="#"><img class="img-responsive img-blog" src="images/blog/blog1.jpg" width="100%" alt="" /></a>
                             <h2><a href="?r=site/blogitem"><?=$info['title']?></a></h2>
                             <h3><?=$info['description']?></h3>
-                            <a class="btn btn-primary readmore" href="?r=site/blogitem&tid=<?=$info['tid']?>">Read More <i class="fa fa-angle-right"></i></a>
+                            <a class="btn btn-primary readmore" href="?r=site/blogitem&tid=<?=$info['tid']?>&user_id=<?=$info['user_id']?>">Read More <i class="fa fa-angle-right"></i></a>
                         </div>
 
                     </div>

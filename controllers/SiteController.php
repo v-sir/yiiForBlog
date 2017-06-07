@@ -72,15 +72,18 @@ class SiteController extends Controller
 
     }
     public function actionBlogitem(){
-        if (Yii::$app->user->isGuest) {
-            return $this->redirect('?r=site/login');
-        }
-        $Comment=new CommentForm();
-        if($Comment->load(Yii::$app->request->post()) && $Comment->comment()){
-            return $this->redirect('?r=site/blog');
 
-        }
-        return $this->render('blog-item',['Comment'=>$Comment]);
+            $Comment=new CommentForm();
+            if($Comment->load(Yii::$app->request->post()) && $Comment->comment()){
+                return $this->redirect('?r=site/blog');
+
+            }
+            return $this->render('blog-item',['Comment'=>$Comment]);
+
+
+
+
+
 
 
 

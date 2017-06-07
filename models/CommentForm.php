@@ -28,6 +28,7 @@ class CommentForm extends Model{
         if (!$this->validate()) {
             return null;
         }
+        if (!Yii::$app->user->isGuest) {
         $tid=Yii::$app->request->get('tid');
         $comment=new Comment();
         if(!$stat=Stat::findOne($tid)) $stat =new Stat();
@@ -39,6 +40,7 @@ class CommentForm extends Model{
         $stat->commentCount+= 1;
         $stat->tid= $tid;
        if  ($comment->save(false)) $stat->save(false);
+        }
 
         return true;
 
