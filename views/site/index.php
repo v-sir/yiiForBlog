@@ -14,8 +14,8 @@
                     <div class="row slide-margin">
                         <div class="col-sm-6">
                             <div class="carousel-content">
-                                <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
-                                <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
+                                <h1 class="animation animated-item-1">Welcome to “煒迹工作室”</h1>
+                                <h2 class="animation animated-item-2">希望互联网、单片机、剑三的朋友们欢迎一起交流学习！</h2>
                                 <a class="btn-slide animation animated-item-3" href="#">Read More</a>
                             </div>
                         </div>
@@ -35,8 +35,8 @@
                     <div class="row slide-margin">
                         <div class="col-sm-6">
                             <div class="carousel-content">
-                                <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
-                                <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
+                                <h1 class="animation animated-item-1">Welcome to “煒迹工作室”</h1>
+                                <h2 class="animation animated-item-2">这里是博客的入口</h2>
                                 <a class="btn-slide animation animated-item-3" href="#">Read More</a>
                             </div>
                         </div>
@@ -56,8 +56,8 @@
                     <div class="row slide-margin">
                         <div class="col-sm-6">
                             <div class="carousel-content">
-                                <h1 class="animation animated-item-1">Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
-                                <h2 class="animation animated-item-2">Accusantium doloremque laudantium totam rem aperiam, eaque ipsa...</h2>
+                                <h1 class="animation animated-item-1">Welcome to “煒迹工作室”</h1>
+                                <h2 class="animation animated-item-2">这里是剑三交流传送门</h2>
                                 <a class="btn-slide animation animated-item-3" href="#">Read More</a>
                             </div>
                         </div>
@@ -82,57 +82,34 @@
 <section id="feature" >
     <div class="container">
         <div class="center wow fadeInDown">
-            <h2>Features</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            <h2>About Me</h2>
+            <p class="lead">这里是关于站长以及本站点的一些信息</p>
         </div>
 
         <div class="row">
-            <div class="features">
+            <div class="features" id="features">
                 <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                     <div class="feature-wrap">
-                        <i class="fa fa-bullhorn"></i>
-                        <h2>Fresh and Clean</h2>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                        <i class="fa fa-user"></i>
+                        <h2>姓名</h2>
+                        <h3>黄炜</h3>
                     </div>
                 </div><!--/.col-md-4-->
 
                 <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                     <div class="feature-wrap">
-                        <i class="fa fa-comments"></i>
-                        <h2>Retina ready</h2>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                        <i class="fa fa-envelope-o"></i>
+                        <h2>邮箱</h2>
+                        <h3>694299993@qq.com</h3><h3>hwstudio00@gmail.com</h3>
                     </div>
                 </div><!--/.col-md-4-->
 
-                <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <div class="feature-wrap">
-                        <i class="fa fa-cloud-download"></i>
-                        <h2>Easy to customize</h2>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                    </div>
-                </div><!--/.col-md-4-->
-
-                <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <div class="feature-wrap">
-                        <i class="fa fa-leaf"></i>
-                        <h2>Adipisicing elit</h2>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                    </div>
-                </div><!--/.col-md-4-->
-
-                <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
-                    <div class="feature-wrap">
-                        <i class="fa fa-cogs"></i>
-                        <h2>Sed do eiusmod</h2>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
-                    </div>
-                </div><!--/.col-md-4-->
 
                 <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
                     <div class="feature-wrap">
                         <i class="fa fa-heart"></i>
-                        <h2>Labore et dolore</h2>
-                        <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
+                        <h2>爱好</h2>
+                        <h3>写代码，玩板子，游戏，b站，未来还是做一个PHPer!</h3>
                     </div>
                 </div><!--/.col-md-4-->
             </div><!--/.services-->
@@ -143,8 +120,8 @@
 <section id="recent-works">
     <div class="container">
         <div class="center wow fadeInDown">
-            <h2>Recent Works</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            <h2>My object</h2>
+            <p class="lead">这里列举我正在做、已经做、曾经做的项目列表</p>
         </div>
 
         <div class="row">
@@ -153,9 +130,10 @@
                     <img class="img-responsive" src="images/portfolio/recent/item1.png" alt="">
                     <div class="overlay">
                         <div class="recent-work-inner">
-                            <h3><a href="#">Business theme</a> </h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                            <a class="preview" href="images/portfolio/full/item1.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
+                            <h3><a href="#">Yii for bbs</a> </h3>
+                            <p>这是一款用yii搭建的bbs/blog/site一起化的个人网站，如果有需要可以直接从Github上clone<br/>URL:https://github.com/v-sir/yiiForBlog </p>
+
+                            <a class="preview" href="image/o1.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                         </div>
                     </div>
                 </div>
@@ -166,8 +144,8 @@
                     <img class="img-responsive" src="images/portfolio/recent/item2.png" alt="">
                     <div class="overlay">
                         <div class="recent-work-inner">
-                            <h3><a href="#">Business theme</a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+                            <h3><a href="#">未开放</a></h3>
+                            <p>未开放，请耐心等待</p>
                             <a class="preview" href="images/portfolio/full/item2.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                         </div>
                     </div>
@@ -179,8 +157,8 @@
                     <img class="img-responsive" src="images/portfolio/recent/item3.png" alt="">
                     <div class="overlay">
                         <div class="recent-work-inner">
-                            <h3><a href="#">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+                            <h3><a href="#">未开放</a></h3>
+                            <p>未开放，请耐心等待</p>
                             <a class="preview" href="images/portfolio/full/item3.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                         </div>
                     </div>
@@ -192,8 +170,8 @@
                     <img class="img-responsive" src="images/portfolio/recent/item4.png" alt="">
                     <div class="overlay">
                         <div class="recent-work-inner">
-                            <h3><a href="#">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+                            <h3><a href="#">未开放</a></h3>
+                            <p>未开放，请耐心等待</p>
                             <a class="preview" href="images/portfolio/full/item4.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                         </div>
                     </div>
@@ -205,8 +183,8 @@
                     <img class="img-responsive" src="images/portfolio/recent/item5.png" alt="">
                     <div class="overlay">
                         <div class="recent-work-inner">
-                            <h3><a href="#">Business theme</a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+                            <h3><a href="#">未开放</a></h3>
+                            <p>未开放，请耐心等待</p>
                             <a class="preview" href="images/portfolio/full/item5.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                         </div>
                     </div>
@@ -218,8 +196,8 @@
                     <img class="img-responsive" src="images/portfolio/recent/item6.png" alt="">
                     <div class="overlay">
                         <div class="recent-work-inner">
-                            <h3><a href="#">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+                            <h3><a href="#">未开放</a></h3>
+                            <p>未开放，请耐心等待</p>
                             <a class="preview" href="images/portfolio/full/item6.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                         </div>
                     </div>
@@ -231,8 +209,8 @@
                     <img class="img-responsive" src="images/portfolio/recent/item7.png" alt="">
                     <div class="overlay">
                         <div class="recent-work-inner">
-                            <h3><a href="#">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+                            <h3><a href="#">未开放</a></h3>
+                            <p>未开放，请耐心等待</p>
                             <a class="preview" href="images/portfolio/full/item7.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                         </div>
                     </div>
@@ -244,8 +222,8 @@
                     <img class="img-responsive" src="images/portfolio/recent/item8.png" alt="">
                     <div class="overlay">
                         <div class="recent-work-inner">
-                            <h3><a href="#">Business theme </a></h3>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+                            <h3><a href="#">未开放</a></h3>
+                            <p>未开放，请耐心等待</p>
                             <a class="preview" href="images/portfolio/full/item8.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                         </div>
                     </div>
@@ -258,8 +236,8 @@
 <section id="services" class="service-item">
     <div class="container">
         <div class="center wow fadeInDown">
-            <h2>Our Service</h2>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+            <h2>My Service</h2>
+            <p class="lead">这里介绍本站能干什么</p>
         </div>
 
         <div class="row">
@@ -270,8 +248,8 @@
                         <img class="img-responsive" src="images/services/services1.png">
                     </div>
                     <div class="media-body">
-                        <h3 class="media-heading">SEO Marketing</h3>
-                        <p>Lorem ipsum dolor sit ame consectetur adipisicing elit</p>
+                        <h3 class="media-heading">PHPer Home</h3>
+                        <p>这里我希望和广大PHPer交流学习！</p>
                     </div>
                 </div>
             </div>
@@ -282,8 +260,8 @@
                         <img class="img-responsive" src="images/services/services2.png">
                     </div>
                     <div class="media-body">
-                        <h3 class="media-heading">SEO Marketing</h3>
-                        <p>Lorem ipsum dolor sit ame consectetur adipisicing elit</p>
+                        <h3 class="media-heading">JXOnline3</h3>
+                        <p>如果可能，这里也可能是剑网三基情交流据点</p>
                     </div>
                 </div>
             </div>
@@ -294,8 +272,8 @@
                         <img class="img-responsive" src="images/services/services3.png">
                     </div>
                     <div class="media-body">
-                        <h3 class="media-heading">SEO Marketing</h3>
-                        <p>Lorem ipsum dolor sit ame consectetur adipisicing elit</p>
+                        <h3 class="media-heading"> Loner Home</h3>
+                        <p>二次元或者三次元孤独者的家</p>
                     </div>
                 </div>
             </div>
@@ -306,8 +284,8 @@
                         <img class="img-responsive" src="images/services/services4.png">
                     </div>
                     <div class="media-body">
-                        <h3 class="media-heading">SEO Marketing</h3>
-                        <p>Lorem ipsum dolor sit ame consectetur adipisicing elit</p>
+                        <h3 class="media-heading">Life talking</h3>
+                        <p>我将是你生活的倾诉者，如果你想的话</p>
                     </div>
                 </div>
             </div>
@@ -318,8 +296,8 @@
                         <img class="img-responsive" src="images/services/services5.png">
                     </div>
                     <div class="media-body">
-                        <h3 class="media-heading">SEO Marketing</h3>
-                        <p>Lorem ipsum dolor sit ame consectetur adipisicing elit</p>
+                        <h3 class="media-heading">Try to serve you</h3>
+                        <p>我尝试用代码写一些工具，给你提供一些方便</p>
                     </div>
                 </div>
             </div>
@@ -330,8 +308,8 @@
                         <img class="img-responsive" src="images/services/services6.png">
                     </div>
                     <div class="media-body">
-                        <h3 class="media-heading">SEO Marketing</h3>
-                        <p>Lorem ipsum dolor sit ame consectetur adipisicing elit</p>
+                        <h3 class="media-heading">Most important</h3>
+                        <p>当然最重要的是你可以给我的打赏，请移步Donation</p>
                     </div>
                 </div>
             </div>
@@ -344,11 +322,11 @@
         <div class="row">
             <div class="col-sm-6 wow fadeInDown">
                 <div class="skill">
-                    <h2>Our Skills</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h2>My Skills</h2>
+                    <p>这里介绍我的一些技能</p>
 
                     <div class="progress-wrap">
-                        <h3>Graphic Design</h3>
+                        <h3>PHP</h3>
                         <div class="progress">
                             <div class="progress-bar  color1" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
                                 <span class="bar-width">85%</span>
@@ -358,28 +336,28 @@
                     </div>
 
                     <div class="progress-wrap">
-                        <h3>HTML</h3>
+                        <h3>HTML+CSS+js</h3>
                         <div class="progress">
-                            <div class="progress-bar color2" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 95%">
-                                <span class="bar-width">95%</span>
+                            <div class="progress-bar color2" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                                <span class="bar-width">65%</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="progress-wrap">
-                        <h3>CSS</h3>
+                        <h3>Yii2</h3>
                         <div class="progress">
-                            <div class="progress-bar color3" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                <span class="bar-width">80%</span>
+                            <div class="progress-bar color3" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                <span class="bar-width">70%</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="progress-wrap">
-                        <h3>Wordpress</h3>
+                        <h3>Arduino</h3>
                         <div class="progress">
-                            <div class="progress-bar color4" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
-                                <span class="bar-width">90%</span>
+                            <div class="progress-bar color4" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                                <span class="bar-width">70%</span>
                             </div>
                         </div>
                     </div>
@@ -389,13 +367,13 @@
 
             <div class="col-sm-6 wow fadeInDown">
                 <div class="accordion">
-                    <h2>Why People like us?</h2>
+                    <h2>Learning and living experience</h2>
                     <div class="panel-group" id="accordion1">
                         <div class="panel panel-default">
                             <div class="panel-heading active">
                                 <h3 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1">
-                                        Lorem ipsum dolor sit amet
+                                        对PHP有兴趣我该怎么入门
                                         <i class="fa fa-angle-right pull-right"></i>
                                     </a>
                                 </h3>
@@ -408,8 +386,8 @@
                                             <img class="img-responsive" src="images/accordion1.png">
                                         </div>
                                         <div class="media-body">
-                                            <h4>Adipisicing elit</h4>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
+                                            <h4>站长愚见</h4>
+                                            <p>个人认为如果你是真的喜欢的话，认真看文档，多百度谷歌就行。有时间看视频，不过本人不喜欢看视频觉得浪费时间，我最喜欢看代码然后研究。</p>
                                         </div>
                                     </div>
                                 </div>
@@ -420,14 +398,14 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo1">
-                                        Lorem ipsum dolor sit amet
+                                        PHP初学者如何上手微信公众开发
                                         <i class="fa fa-angle-right pull-right"></i>
                                     </a>
                                 </h3>
                             </div>
                             <div id="collapseTwo1" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+                                    我最初尝试写一些公众号开发，像微信墙。我之前是看官方给出的例子慢慢琢磨然后就懂得。其实主要的运用我觉得是curl的运用
                                 </div>
                             </div>
                         </div>
@@ -436,14 +414,14 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree1">
-                                        Lorem ipsum dolor sit amet
+                                        如何深入了解MVC的设计模式
                                         <i class="fa fa-angle-right pull-right"></i>
                                     </a>
                                 </h3>
                             </div>
                             <div id="collapseThree1" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+                                    我觉得，大致的内容大家都是明白的。我想如果要深入理解和升华的话那非常有必要去学习一门框架，像YII,Larave，thinkPHP等等
                                 </div>
                             </div>
                         </div>
@@ -452,14 +430,14 @@
                             <div class="panel-heading">
                                 <h3 class="panel-title">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour1">
-                                        Lorem ipsum dolor sit amet
+                                        二次元的看法
                                         <i class="fa fa-angle-right pull-right"></i>
                                     </a>
                                 </h3>
                             </div>
                             <div id="collapseFour1" class="panel-collapse collapse">
                                 <div class="panel-body">
-                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
+                                    其实我对二次元的定义还不是特别的清楚，这是强行存在的版面，只是为了不影响这个模板的排版，O(∩_∩)O哈哈~
                                 </div>
                             </div>
                         </div>
@@ -479,11 +457,11 @@
                     <div class="media">
                         <div class="parrent pull-left">
                             <ul class="nav nav-tabs nav-stacked">
-                                <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">Responsive Web Design</a></li>
-                                <li class="active"><a href="#tab2" data-toggle="tab" class="analistic-02">Premium Plugin Included</a></li>
-                                <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">Predefine Layout</a></li>
-                                <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">Our Philosopy</a></li>
-                                <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">What We Do?</a></li>
+                                <li class=""><a href="#tab1" data-toggle="tab" class="analistic-01">超级管理员</a></li>
+                                <li class="active"><a href="#tab2" data-toggle="tab" class="analistic-02">管理员一</a></li>
+                                <li class=""><a href="#tab3" data-toggle="tab" class="tehnical">管理员二</a></li>
+                                <li class=""><a href="#tab4" data-toggle="tab" class="tehnical">管理员三</a></li>
+                                <li class=""><a href="#tab5" data-toggle="tab" class="tehnical">管理员四</a></li>
                             </ul>
                         </div>
 
@@ -495,8 +473,8 @@
                                             <img class="img-responsive" src="images/tab2.png">
                                         </div>
                                         <div class="media-body">
-                                            <h2>Adipisicing elit</h2>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use.</p>
+                                            <h2>黄炜</h2>
+                                            <p>一个PHP爱好者</p>
                                         </div>
                                     </div>
                                 </div>
@@ -507,23 +485,26 @@
                                             <img class="img-responsive" src="images/tab1.png">
                                         </div>
                                         <div class="media-body">
-                                            <h2>Adipisicing elit</h2>
-                                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use.
+                                            <h2>暂无</h2>
+                                            <p>如果你有这个兴趣请联系管理员/站长
                                             </p>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="tab-pane fade" id="tab3">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
+                                    <h2>暂无</h2>
+                                    <p>如果你有这个兴趣请联系管理员/站长
                                 </div>
 
                                 <div class="tab-pane fade" id="tab4">
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words</p>
+                                    <h2>暂无</h2>
+                                    <p>如果你有这个兴趣请联系管理员/站长
                                 </div>
 
                                 <div class="tab-pane fade" id="tab5">
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures,</p>
+                                    <h2>暂无</h2>
+                                    <p>如果你有这个兴趣请联系管理员/站长
                                 </div>
                             </div> <!--/.tab-content-->
                         </div> <!--/.media-body-->
@@ -533,26 +514,18 @@
 
             <div class="col-xs-12 col-sm-4 wow fadeInDown">
                 <div class="testimonial">
-                    <h2>Testimonials</h2>
+                    <h2>Administrators</h2>
                     <div class="media testimonial-inner">
                         <div class="pull-left">
                             <img class="img-responsive img-circle" src="images/testimonials1.png">
                         </div>
                         <div class="media-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-                            <span><strong>-John Doe/</strong> Director of corlate.com</span>
+                            <p>这个版块是管理简介版块，如果你有兴趣成为一个管理员的话请联系我。</p>
+                            <span><strong>-站长/</strong> ubadbad.cc</span>
                         </div>
                     </div>
 
-                    <div class="media testimonial-inner">
-                        <div class="pull-left">
-                            <img class="img-responsive img-circle" src="images/testimonials1.png">
-                        </div>
-                        <div class="media-body">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-                            <span><strong>-John Doe/</strong> Director of corlate.com</span>
-                        </div>
-                    </div>
+
 
                 </div>
             </div>
@@ -560,7 +533,7 @@
         </div><!--/.row-->
     </div><!--/.container-->
 </section><!--/#content-->
-
+<!--
 <section id="partner">
     <div class="container">
         <div class="center wow fadeInDown">
@@ -577,8 +550,8 @@
                 <li> <a href="#"><img class="img-responsive wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1500ms" src="images/partners/partner5.png"></a></li>
             </ul>
         </div>
-    </div><!--/.container-->
-</section><!--/#partner-->
+    </div>
+</section>
 
 <section id="conatcat-info">
     <div class="container">
@@ -595,5 +568,5 @@
                 </div>
             </div>
         </div>
-    </div><!--/.container-->
-</section><!--/#conatcat-info-->
+    </div>
+</section>-->

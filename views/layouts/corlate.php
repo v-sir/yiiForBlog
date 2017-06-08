@@ -22,6 +22,34 @@ AppAsset::register($this);
     <meta name="author" content="">
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <style>
+        .black_overlay{
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index:1001;
+            -moz-opacity: 0.8;
+            opacity:.80;
+            filter: alpha(opacity=88);
+        }
+        .white_content {
+            display: none;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 55%;
+            height: 55%;
+            padding: 20px;
+            border: 10px solid #999999;
+            background-color: white;
+            z-index:1002;
+            overflow: auto;
+        }
+    </style>
 
 	<!-- core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -54,11 +82,11 @@ AppAsset::register($this);
                     <div class="col-sm-6 col-xs-8">
                        <div class="social">
                             <ul class="social-share">
-                                <img  style="CURSOR: pointer" onclick="javascript:window.open('http://b.qq.com/webc.htm?new=0&sid=694299993&o=ubadbad.cc&q=7', '_blank', 'height=502, width=644,toolbar=no,scrollbars=no,menubar=no,status=no');"  border="0" SRC=http://wpa.qq.com/pa?p=1:694299993:1 alt="点击这里给我发消息">
-                                <li><a href="#"><i class="fa fa-qq">qq</i></a></li>
+
+                                <li><a href="javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><i class="fa fa-qq">qq</i></a></li>
                                 <li><a target="_blank" href="http://weibo.com/1801439974/profile?topnav=1&wvr=6&is_all=1"><i class="fa fa-weibo"></i></a></li>
-                                <li><a href="#"><i class="fa fa-weixin fa-4" aria-hidden="true">weixin</i></a></li>
-                                <li><a href="#"><i class="fa fa-">支</i></a></li>
+                                <li><a href="javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><i class="fa fa-weixin fa-4" aria-hidden="true">weixin</i></a></li>
+                                <li><a href="javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><i class="fa fa-">支</i></a></li>
                                 <li><a target="_blank" href="https://github.com/v-sir"><i class="fa fa-github"></i></a></li>
                             </ul>
                             <div class="search">
@@ -82,7 +110,7 @@ AppAsset::register($this);
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="#"><img src="image/logo.png" alt="logo"></a>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right">
@@ -93,7 +121,7 @@ AppAsset::register($this);
                         'items' => [
                         ['label' => 'Home', 'url' => ['/site/index']],
                         ['label' => 'Blog', 'url' => ['/site/blog']],
-                        ['label' => 'About', 'url' => ['/site/about']],
+                       // ['label' => 'About', 'url' => ['/site/about']],
                         ['label' => 'Contact', 'url' => ['/site/contact']],
                         Yii::$app->user->isGuest ? (
                                 ['label' => 'Login/Signup', 'url' => ['/site/login']]
@@ -152,6 +180,14 @@ AppAsset::register($this);
     </header><!--/header-->
 
     <?php $this->beginBody() ?>
+
+    <div id="light" class="white_content">
+        <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">X</a>
+        <img src="./image/alipay.jpg" width="200px" height="320px">
+        <img src="./image/wechat.png" width="200px" height="320px">
+        <img src="./image/qq.jpg" width="200px" height="320px">
+    </div>
+    <div id="fade" class="black_overlay"></div>
     <?=$content?>
     <?php $this->endBody() ?>
 
@@ -160,15 +196,13 @@ AppAsset::register($this);
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
-                        <h3>Company</h3>
+                        <h3>About</h3>
                         <ul>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">We are hiring</a></li>
-                            <li><a href="#">Meet the team</a></li>
-                            <li><a href="#">Copyright</a></li>
-                            <li><a href="#">Terms of use</a></li>
-                            <li><a href="#">Privacy policy</a></li>
-                            <li><a href="#">Contact us</a></li>
+                            <li><a href="#features">About me</a></li>
+                            <li><a href="#">My blog</a></li>
+                            <li><a href="#">My site</a></li>
+                            <li><a target="_blank" href="https://github.com/v-sir">MY Github</a></li>
+
                         </ul>
                     </div>
                 </div><!--/.col-md-3-->
@@ -177,12 +211,13 @@ AppAsset::register($this);
                     <div class="widget">
                         <h3>Support</h3>
                         <ul>
-                            <li><a href="#">Faq</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Forum</a></li>
-                            <li><a href="#">Documentation</a></li>
-                            <li><a href="#">Refund policy</a></li>
-                            <li><a href="#">Ticket system</a></li>
+                            <li><a target="_blank" href="http://php.net/">php</a></li>
+                            <li><a target="_blank" href="http://www.bootcss.com/">Bootstrap</a></li>
+                            <li><a target="_blank" href="http://www.yiiframework.com/">Yii</a></li>
+                            <li><a target="_blank" href="http://fontawesome.io/">Font Awesome</a></li>
+                            <li><a target="_blank" href="http://shapebootstrap.net/demo/html/corlate/">Corlate</a></li>
+                            <li><a target="_blank" href="http://www.xunsearch.com/">xunsearch</a></li>
+                            <li><a target="_blank" href="http://ueditor.baidu.com/website/">Ueditor</a></li>
                             <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1262125724'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1262125724%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
                         </ul>
                     </div>
@@ -190,30 +225,31 @@ AppAsset::register($this);
 
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
-                        <h3>Developers</h3>
+                        <h3>Recommended links</h3>
                         <ul>
-                            <li><a href="#">Web Development</a></li>
-                            <li><a href="#">SEO Marketing</a></li>
-                            <li><a href="#">Theme</a></li>
-                            <li><a href="#">Development</a></li>
-                            <li><a href="#">Email Marketing</a></li>
-                            <li><a href="#">Plugin Development</a></li>
-                            <li><a href="#">Article Writing</a></li>
+                            <li><a target="_blank" href=" https://haimanchajian.com/">海鳗插件</a></li>
+                            <li><a target="_blank" href="https://www.sky31.com/">Sun-e Studio</a></li>
+                            <li><a target="_blank" href="https://radio.sky31.com/">Xtu Radio</a></li>
+                            <li><a target="_blank" href="https://www.sky31.com/xdspc/">Xtu Video</a></li>
+                            <li><a target="_blank" href="https://movie.sky31.com/">Xtu movies</a></li>
+                            <li><a target="_blank" href="https://buy.sky31.com/">Xtu Secondhand market</a></li>
+                            <li><a target="_blank" href="https://doc.sky31.com/">Xtu doc</a></li>
+
                         </ul>
                     </div>
                 </div><!--/.col-md-3-->
 
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
-                        <h3>Our Partners</h3>
+                        <h3>Blogs & githubs</h3>
                         <ul>
-                            <li><a href="#">Adipisicing Elit</a></li>
-                            <li><a href="#">Eiusmod</a></li>
-                            <li><a href="#">Tempor</a></li>
-                            <li><a href="#">Veniam</a></li>
-                            <li><a href="#">Exercitation</a></li>
-                            <li><a href="#">Ullamco</a></li>
-                            <li><a href="#">Laboris</a></li>
+                            <li><a target="_blank" href="https://github.com/linroid">linroid's Github</a></li>
+                            <li><a target="_blank" href="https://github.com/hightman">hightman's Github</a></li>
+                            <li><a target="_blank" href="https://return0.cc/">Andreas's Blog</a></li>
+                            <li><a target="_blank" href="http://www.zhangshirong.com/blog/">Jarvis's Blog</a></li>
+                            <li><a target="_blank" href="https://github.com/andreas39">Andreas's Github</a></li>
+                            <li><a target="_blank" href="https://github.com/imzhangshirong">Jarvis's Github</a></li>
+                            <li><a target="_blank" href="https://github.com/slight-sky">slight-sky's Github</a></li>
                         </ul>
                     </div>
                 </div><!--/.col-md-3-->
@@ -225,7 +261,7 @@ AppAsset::register($this);
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-                    &copy; 2014-<?= date('Y') ?> <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>. All Rights Reserved.
+                    &copy; 2014-<?= date('Y') ?> <a target="_blank" href="http://ubadbad.cc/" title="Learn with Mr.wei">Ubadbad.cc</a>. All Rights Reserved.
                 </div>
                 <div class="col-sm-6">
                     <ul class="pull-right">

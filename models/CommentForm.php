@@ -7,7 +7,7 @@
  */
 namespace app\models;
 use yii\base\Model;
-use app\models\Comment;
+use app\models;
 use yii\db\ActiveRecord;
 use yii;
 
@@ -20,7 +20,8 @@ class CommentForm extends Model{
     public function rules()
     {
         return [
-            [['nickname', 'message'], 'required'],
+            [[ 'message'], 'required'],
+
 
         ];
     }
@@ -31,11 +32,12 @@ class CommentForm extends Model{
         if (!Yii::$app->user->isGuest) {
         $tid=Yii::$app->request->get('tid');
         $comment=new Comment();
+
         if(!$stat=Stat::findOne($tid)) $stat =new Stat();
         $comment->tid=$tid;
         $comment->user_id=Yii::$app->user->getId();
         $comment->create_at=time();
-        $comment->nickname=$this->nickname;
+        $comment->nickname=Yii::$app->user->identity->username;
         $comment->message=$this->message;
         $stat->commentCount+= 1;
         $stat->tid= $tid;

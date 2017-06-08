@@ -39,7 +39,10 @@ $pagination = new Pagination([
 ]);
 $commentInfo=new models\Comment();
 $commentInfo=$commentInfo->getComment($tid,$pagination->offset,$pagination->limit);
-
+if (!Yii::$app->user->isGuest) {
+    $user = new models\UserInfo;
+    $user = $user->getUserInfo(Yii::$app->user->getId());
+}
 if(empty($headImgURL)) $headImgURL='./image/noHeadImg.jpg';
 
 
@@ -168,13 +171,13 @@ if(empty($headImgURL)) $headImgURL='./image/noHeadImg.jpg';
                                 <p>I am very happy to talk with you!</p>
                             </div>
 
-                            <?php $form = ActiveForm::begin(['id' => 'form-comment','class'=>'comment-form','action'=>"index.php?r=site/comment&tid=".$info['tid']]); ?>
+                            <?php $form = ActiveForm::begin(['id' => 'form-comment','class'=>'comment-form','action'=>"index.php?r=site/comment&tid=".$info['tid']."&user_id=".$info['user_id']]); ?>
                                 <div class="row">
                                     <div class="col-sm-3 col-sm-offset-1">
                                         <div class="form-group">
 
 
-                                            <?= $form->field($Comment, 'nickname')->label('*nickname')->textInput(['autofocus' => true]) ?>
+                                            <?= $form->field($Comment, 'nickname')->label('*nickname')->textInput(['autofocus' => true,'value'=>$user['name'],'disabled'=>'disabled']) ?>
 
                                         </div>
 

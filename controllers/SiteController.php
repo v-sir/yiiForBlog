@@ -11,6 +11,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\UserInfo;
 use app\models\Users;
 use yii\web\UploadedFile;
 class SiteController extends Controller
@@ -90,13 +91,18 @@ class SiteController extends Controller
     }
     public function actionComment(){
         $tid=Yii::$app->request->get('tid');
+        $user_id=Yii::$app->request->get('user_id');
 
         if (Yii::$app->user->isGuest) {
             return $this->redirect('?r=site/login');
         }
+
+
+
+
         $Comment=new CommentForm();
         if($Comment->load(Yii::$app->request->post()) && $Comment->comment()){
-            return $this->redirect('?r=site/blogitem&tid='.$tid);
+            return $this->redirect('?r=site/blogitem&tid='.$tid."&user_id=".$user_id);
 
         }
         return $this->render('blog-item',['Comment'=>$Comment]);
