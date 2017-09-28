@@ -5,7 +5,7 @@
 自动部署测试站：<https://dev.ubadbad.cc/blog/v-dev>
 [![build status](http://https://github.com/v-sir/yiiForBlog)](http://https://github.com/v-sir/yiiForBlog)
 
-[源码仓库](http://https://github.com/v-sir/yiiForBlog)
+[源码仓库](https://github.com/v-sir/yiiForBlog)
 [代码风格](https://github.com/yiisoft/yii2/blob/master/docs/internals/core-code-style.md)
 
 
