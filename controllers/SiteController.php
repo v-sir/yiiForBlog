@@ -256,6 +256,8 @@ class SiteController extends Controller
     public function actionGithubHook()
     {
         $data = json_decode(file_get_contents('php://input'), true);
-        var_dump($data);
+        if (isset($data['ref']) && $data['ref'] === 'refs/heads/master-dev') {
+            exec('cd /home/www/dev-dir/yiiForBlog && git pull origin master-dev');
+        }
     }
 }
