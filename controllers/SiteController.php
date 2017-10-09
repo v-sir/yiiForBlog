@@ -4,16 +4,14 @@ namespace app\controllers;
 
 use app\models\AddContentForm;
 use app\models\CommentForm;
-use app\models\Stat;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
-use app\models\UserInfo;
-use app\models\Users;
 use yii\web\UploadedFile;
+
 class SiteController extends Controller
 {
     /**
@@ -24,7 +22,7 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout','login','signup','addcontent','articlelist'],
+                'only' => ['logout', 'login', 'signup', 'addcontent', 'articlelist'],
                 'rules' => [
                     [
                         'allow' => true,
@@ -32,7 +30,7 @@ class SiteController extends Controller
                         'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout','addcontent','articlelist'],
+                        'actions' => ['logout', 'addcontent', 'articlelist'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -52,7 +50,7 @@ class SiteController extends Controller
      */
     public function actions()
     {
-        $this->layout="corlate";
+        $this->layout = "corlate";
 
         return [
             'error' => [
@@ -66,79 +64,80 @@ class SiteController extends Controller
     }
 
 
-    public function actionBlog(){
+    public function actionBlog()
+    {
 
 
         return $this->render('blog');
 
     }
-    public function actionBlogitem(){
 
-            $Comment=new CommentForm();
-            if($Comment->load(Yii::$app->request->post()) && $Comment->comment()){
-                return $this->redirect('?r=site/blog');
+    public function actionBlogitem()
+    {
 
-            }
-            return $this->render('blog-item',['Comment'=>$Comment]);
+        $Comment = new CommentForm();
+        if ($Comment->load(Yii::$app->request->post()) && $Comment->comment()) {
+            return $this->redirect('?r=site/blog');
 
-
-
-
-
-
+        }
+        return $this->render('blog-item', ['Comment' => $Comment]);
 
 
     }
-    public function actionComment(){
-        $tid=Yii::$app->request->get('tid');
-        $user_id=Yii::$app->request->get('user_id');
+
+    public function actionComment()
+    {
+        $tid = Yii::$app->request->get('tid');
+        $user_id = Yii::$app->request->get('user_id');
 
         if (Yii::$app->user->isGuest) {
             return $this->redirect('?r=site/login');
         }
 
 
-
-
-        $Comment=new CommentForm();
-        if($Comment->load(Yii::$app->request->post()) && $Comment->comment()){
-            return $this->redirect('?r=site/blogitem&tid='.$tid."&user_id=".$user_id);
+        $Comment = new CommentForm();
+        if ($Comment->load(Yii::$app->request->post()) && $Comment->comment()) {
+            return $this->redirect('?r=site/blogitem&tid=' . $tid . "&user_id=" . $user_id);
 
         }
-        return $this->render('blog-item',['Comment'=>$Comment]);
+        return $this->render('blog-item', ['Comment' => $Comment]);
 
     }
-    public function actionSignup(){
 
-        $model= new \app\models\SignupForm;
-        if($model->load(yii::$app->request->post())&&$model->signup()){
+    public function actionSignup()
+    {
+
+        $model = new \app\models\SignupForm;
+        if ($model->load(yii::$app->request->post()) && $model->signup()) {
 
 
             return $this->redirect('?r=site/upinfo');
 
 
         }
-        return $this->render('signup',['model'=>$model]);
+        return $this->render('signup', ['model' => $model]);
 
     }
-    public function actionUpinfo(){
+
+    public function actionUpinfo()
+    {
 
         if (Yii::$app->user->isGuest) {
             return $this->redirect('?r=site/login');
         }
-        $userInfo= new \app\models\UserInfoForm;
-        $UploadHeadImg= UploadedFile::getInstance($userInfo, 'UploadHeadImg');
+        $userInfo = new \app\models\UserInfoForm;
+        $UploadHeadImg = UploadedFile::getInstance($userInfo, 'UploadHeadImg');
 
 
-
-        if($userInfo->load(yii::$app->request->post())&&$userInfo->updateUserInfo($UploadHeadImg)){
+        if ($userInfo->load(yii::$app->request->post()) && $userInfo->updateUserInfo($UploadHeadImg)) {
 
             return $this->redirect('?r=site/index');
-       }
+        }
 
-        return $this->render('UpdateUserInfo',['userInfo'=>$userInfo]);
+        return $this->render('UpdateUserInfo', ['userInfo' => $userInfo]);
 
     }
+
     /**
      * Displays homepage.
      *
@@ -157,7 +156,7 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        $this->layout="corlate";
+        $this->layout = "corlate";
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -167,7 +166,7 @@ class SiteController extends Controller
             return $this->goBack();
         }
         return $this->render('login', [
-            'model' => $model
+            'model' => $model,
         ]);
     }
 
@@ -212,36 +211,51 @@ class SiteController extends Controller
 
         return $this->render('about');
     }
-    public function actionAddcontent(){
+
+    public function actionAddcontent()
+    {
 
         if (Yii::$app->user->isGuest) {
             return $this->redirect('?r=site/login');
         }
-        $Article=new AddContentForm();
-        if($Article->load(Yii::$app->request->post()) && $Article->addContent()){
+        $Article = new AddContentForm();
+        if ($Article->load(Yii::$app->request->post()) && $Article->addContent()) {
             return $this->redirect('?r=site/blog');
 
         }
 
-        return$this->render("addcontent",['Article'=>$Article]);
+        return $this->render("addcontent", ['Article' => $Article]);
     }
-    public function actionUpdatecontent(){
+
+    public function actionUpdatecontent()
+    {
 
         if (Yii::$app->user->isGuest) {
             return $this->redirect('?r=site/login');
         }
-        $Article=new AddContentForm();
-        if($Article->load(Yii::$app->request->post()) && $Article->addContent()){
+        $Article = new AddContentForm();
+        if ($Article->load(Yii::$app->request->post()) && $Article->addContent()) {
             return $this->redirect('?r=site/blog');
 
         }
 
-        return$this->render("updatecontent",['Article'=>$Article]);
+        return $this->render("updatecontent", ['Article' => $Article]);
     }
-    public function actionArticlelist(){
+
+    public function actionArticlelist()
+    {
         return $this->render("articleList");
     }
 
-
-
+    /**
+     * GitHub - WebHook 推送日志
+     * @throws \yii\web\HttpException
+     *
+     * 验证方式：X-GitHub-Token
+     */
+    public function actionGithubHook()
+    {
+        $data = json_decode(file_get_contents('php://input'), true);
+        var_dump($data);
+    }
 }
