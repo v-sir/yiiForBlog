@@ -3,7 +3,7 @@
 炜博，基于 [Yii2](http://www.yiiframework.com) 的博客系统，是我在学习 yii2设计思想的一次应用。
 
 自动部署测试站：<https://dev.ubadbad.cc/blog/v-dev>
-[![build status](http://https://github.com/v-sir/yiiForBlog)](http://https://github.com/v-sir/yiiForBlog)
+[![build status](http://https://github.com/v-sir/yiiForBlog)](https://github.com/v-sir/yiiForBlog)
 
 [源码仓库](https://github.com/v-sir/yiiForBlog)
 [代码风格](https://github.com/yiisoft/yii2/blob/master/docs/internals/core-code-style.md)
