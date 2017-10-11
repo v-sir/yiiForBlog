@@ -19,6 +19,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use yii\web\ForbiddenHttpException;
 use yii\web\HttpException;
+use yii\web\ServerErrorHttpException;
 use yii\web\UploadedFile;
 
 class SiteController extends Controller
@@ -258,14 +259,14 @@ class SiteController extends Controller
 
     /**
      * WebHook 推送日志
+     * @param string $branch 代码仓库分支
+     * @param string $accessMethod 推送方式：gitHub /gitLab
      * @throws \yii\web\HttpException
-     *
      * 验证方式：GitHub：X-Hub-Signature / GitLab：HTTP_X_GITLAB_TOKEN
      */
-    public function actionWebHook()
+    public function actionWebHook($branch, $accessMethod)
     {
         $token = '16d654e67c04904252d6266430876461';
-        $accessMethod = WEBHOOK_GITHUB;
         $data = json_decode(file_get_contents('php://input'), true);
         // github webhook
         if ($accessMethod === WEBHOOK_GITHUB) {
@@ -282,8 +283,17 @@ class SiteController extends Controller
                 throw new ForbiddenHttpException('Access denied.');
             }
         }
-        if (isset($data['ref']) && $data['ref'] === 'refs/heads/master-dev') {
-            exec('cd /home/www/dev-dir/yiiForBlog && git pull origin master-dev');
+        if (isset($data['ref']) && $data['ref'] === 'refs/heads/' . $branch) {
+            exec('cd /home/www/dev-dir/yiiForBlog && git pull origin master-dev 2>&1');
         }
+        $commit = $data['commits'][0];
+        $repo = $data['repository']['name'];
+        $basePath = Yii::getAlias('@app/runtime/' . $accessMethod);
+        if (!is_dir($basePath) && !@mkdir($basePath, 0777, true)) {
+            throw new ServerErrorHttpException('Can not create dir.');
+        }
+        $file = $basePath . '/' . $repo . '-' . $branch . '-push.log';
+        $line = $commit['timestamp'] . "\t" . $commit['author']['name'] . "\t" . $commit['id'] . PHP_EOL;
+        file_put_contents($file, $line, FILE_APPEND);
     }
 }
