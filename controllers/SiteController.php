@@ -11,12 +11,14 @@ use app\models\AddContentForm;
 use app\models\CommentForm;
 use Yii;
 use yii\base\Exception;
+use yii\base\NotSupportedException;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use yii\web\ForbiddenHttpException;
+use yii\web\HttpException;
 use yii\web\UploadedFile;
 
 class SiteController extends Controller
@@ -264,17 +266,22 @@ class SiteController extends Controller
     {
         $token = '16d654e67c04904252d6266430876461';
         $accessMethod = WEBHOOK_GITHUB;
-        if (!isset($_SERVER[$accessMethod]) || $_SERVER[$accessMethod] !== $token) {
-            throw new ForbiddenHttpException('Access denied.');
-        }
-        exec('ls', $log, $status);
-
-        print_r($log);
-
-        print_r($status);
-
-        echo PHP_EOL;
         $data = json_decode(file_get_contents('php://input'), true);
+        // github webhook
+        if ($accessMethod === WEBHOOK_GITHUB) {
+            list($algo, $hash) = explode('=', $_SERVER[WEBHOOK_GITHUB], 2) + ['', ''];
+            if (!in_array($algo, hash_algos())) {
+                throw  new NotSupportedException($algo . ' is not Supported.');
+            }
+            if ($hash !== hash_hmac($algo, $data, $token)) {
+                throw new ForbiddenHttpException('Access denied.');
+            }
+        } else {
+            // gitlab webhook
+            if (!isset($_SERVER[WEBHOOK_GITLAB]) || $_SERVER[WEBHOOK_GITLAB] !== $token) {
+                throw new ForbiddenHttpException('Access denied.');
+            }
+        }
         if (isset($data['ref']) && $data['ref'] === 'refs/heads/master-dev') {
             exec('cd /home/www/dev-dir/yiiForBlog && git pull origin master-dev');
         }
