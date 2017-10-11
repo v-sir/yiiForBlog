@@ -1,15 +1,22 @@
 <?php
+/**
+ * This file is part of the yiiForBlog.
+ * @link http://weplay.ubadbad.cc/
+ * @copyright Copyright (c) 2017 v-sir studio.
+ */
 
 namespace app\controllers;
 
 use app\models\AddContentForm;
 use app\models\CommentForm;
 use Yii;
+use yii\base\Exception;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use yii\web\ForbiddenHttpException;
 use yii\web\UploadedFile;
 
 class SiteController extends Controller
@@ -248,13 +255,18 @@ class SiteController extends Controller
     }
 
     /**
-     * GitHub - WebHook 推送日志
+     * WebHook 推送日志
      * @throws \yii\web\HttpException
      *
-     * 验证方式：X-GitHub-Token
+     * 验证方式：GitHub：X-Hub-Signature / GitLab：HTTP_X_GITLAB_TOKEN
      */
-    public function actionGithubHook()
+    public function actionWebHook()
     {
+        $token = '16d654e67c04904252d6266430876461';
+        $accessMethod = WEBHOOK_GITHUB;
+        if (!isset($_SERVER[$accessMethod]) || $_SERVER[$accessMethod] !== $token) {
+            throw new ForbiddenHttpException('Access denied.');
+        }
         $data = json_decode(file_get_contents('php://input'), true);
         if (isset($data['ref']) && $data['ref'] === 'refs/heads/master-dev') {
             exec('cd /home/www/dev-dir/yiiForBlog && git pull origin master-dev');
