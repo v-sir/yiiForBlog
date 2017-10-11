@@ -269,7 +269,7 @@ class SiteController extends Controller
         $token = '16d654e67c04904252d6266430876461';
         $data = json_decode(file_get_contents('php://input'), true);
         // github webhook
-        if ($accessMethod === WEBHOOK_GITHUB) {
+        if ($accessMethod === 'github') {
             list($algo, $hash) = explode('=', $_SERVER[WEBHOOK_GITHUB], 2) + ['', ''];
             if (!in_array($algo, hash_algos())) {
                 throw  new NotSupportedException($algo . ' is not Supported.');
