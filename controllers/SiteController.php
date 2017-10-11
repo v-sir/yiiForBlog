@@ -13,6 +13,7 @@ use Yii;
 use yii\base\Exception;
 use yii\base\NotSupportedException;
 use yii\filters\AccessControl;
+use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
@@ -272,7 +273,7 @@ class SiteController extends Controller
         if ($webhook === 'github') {
             list($algo, $hash) = explode('=', $_SERVER[WEBHOOK_GITHUB], 2) + ['', ''];
             if (!in_array($algo, hash_algos())) {
-                throw  new NotSupportedException($algo . ' is not Supported.');
+                // throw  new NotSupportedException($algo . ' is not Supported.');
             }
             if ($hash !== hash_hmac($algo, $data, $token)) {
                 throw new ForbiddenHttpException('Access denied.');
@@ -282,6 +283,9 @@ class SiteController extends Controller
             if (!isset($_SERVER[WEBHOOK_GITLAB]) || $_SERVER[WEBHOOK_GITLAB] !== $token) {
                 throw new ForbiddenHttpException('Access denied.');
             }
+        }
+        if (!isset($data['ref'])) {
+            throw new BadRequestHttpException('Bad Request.');
         }
         if (isset($data['ref']) && $data['ref'] === 'refs/heads/' . $branch) {
             exec('cd /home/www/dev-dir/yiiForBlog && git pull origin master-dev 2>&1');
