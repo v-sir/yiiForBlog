@@ -267,6 +267,13 @@ class SiteController extends Controller
         if (!isset($_SERVER[$accessMethod]) || $_SERVER[$accessMethod] !== $token) {
             throw new ForbiddenHttpException('Access denied.');
         }
+        exec('ls', $log, $status);
+
+        print_r($log);
+
+        print_r($status);
+
+        echo PHP_EOL;
         $data = json_decode(file_get_contents('php://input'), true);
         if (isset($data['ref']) && $data['ref'] === 'refs/heads/master-dev') {
             exec('cd /home/www/dev-dir/yiiForBlog && git pull origin master-dev');
