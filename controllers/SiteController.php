@@ -260,16 +260,16 @@ class SiteController extends Controller
     /**
      * WebHook 推送日志
      * @param string $branch 代码仓库分支
-     * @param string $accessMethod 推送方式：gitHub /gitLab
+     * @param string $webhook 推送方式：gitHub /gitLab
      * @throws \yii\web\HttpException
      * 验证方式：GitHub：X-Hub-Signature / GitLab：HTTP_X_GITLAB_TOKEN
      */
-    public function actionWebHook($branch, $accessMethod)
+    public function actionWebHook($branch, $webhook)
     {
         $token = '16d654e67c04904252d6266430876461';
         $data = json_decode(file_get_contents('php://input'), true);
         // github webhook
-        if ($accessMethod === 'github') {
+        if ($webhook === 'github') {
             list($algo, $hash) = explode('=', $_SERVER[WEBHOOK_GITHUB], 2) + ['', ''];
             if (!in_array($algo, hash_algos())) {
                 throw  new NotSupportedException($algo . ' is not Supported.');
@@ -288,7 +288,7 @@ class SiteController extends Controller
         }
         $commit = $data['commits'][0];
         $repo = $data['repository']['name'];
-        $basePath = Yii::getAlias('@app/runtime/' . $accessMethod);
+        $basePath = Yii::getAlias('@app/runtime/' . $webhook);
         if (!is_dir($basePath) && !@mkdir($basePath, 0777, true)) {
             throw new ServerErrorHttpException('Can not create dir.');
         }
