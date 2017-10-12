@@ -270,20 +270,23 @@ class SiteController extends Controller
         $token = '16d654e67c04904252d6266430876461';
         $data = file_get_contents('php://input');
         // github webhook
-        if ($webhook === 'github') {
-            list($algo, $hash) = explode('=', 'sha1=0d430114b8c799d936c61ed117612e139d1d2941', 2) + ['', ''];
+       // if ($webhook === 'github') {
+            list($algo, $hash) = explode('=', $_SERVER[WEBHOOK_GITHUB], 2) + ['', ''];
+            echo $_SERVER[WEBHOOK_GITHUB];
             if (!in_array($algo, hash_algos())) {
                 throw  new NotSupportedException($algo . ' is not Supported.');
             }
             if ($hash !== hash_hmac($algo, $data, $token)) {
                 throw new ForbiddenHttpException('Access denied.');
             }
+            /**
         } else {
             // gitlab webhook
             if (!isset($_SERVER[WEBHOOK_GITLAB]) || $_SERVER[WEBHOOK_GITLAB] !== $token) {
                 throw new ForbiddenHttpException('Access denied.');
             }
         }
+             * */
         if (!isset($data['ref'])) {
             throw new BadRequestHttpException('Bad Request.');
         }
@@ -293,7 +296,7 @@ class SiteController extends Controller
         $data = json_decode($data, true);
         $commit = $data['commits'][0];
         $repo = $data['repository']['name'];
-        $basePath = Yii::getAlias('@app/runtime/' . $webhook);
+        $basePath = Yii::getAlias('@app/runtime/webhook');
         if (!is_dir($basePath) && !@mkdir($basePath, 0777, true)) {
             throw new ServerErrorHttpException('Can not create dir.');
         }
