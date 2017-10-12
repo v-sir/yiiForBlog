@@ -79,7 +79,7 @@
     </a>
 </section><!--/#main-slider-->
 
-<section id="feature" >
+<section id="feature">
     <div class="container">
         <div class="center wow fadeInDown">
             <h2>About Me</h2>
@@ -100,7 +100,11 @@
                     <div class="feature-wrap">
                         <i class="fa fa-envelope-o"></i>
                         <h2>邮箱</h2>
-                        <h3>studio@ubadbad.cc</h3><h3>v-sir@ubadbad.cc</h3>
+                        <h3>
+                            <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=ne7p6Pn08t3o--z5--z5s-7_" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_12.png"/></a>
+                        </h3><h3>
+                            <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=yb-kuqC7ibyrqK2rqK3nqqo" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_02.png"/></a>
+                        </h3>
                     </div>
                 </div><!--/.col-md-4-->
 
@@ -130,8 +134,9 @@
                     <img class="img-responsive" src="images/portfolio/recent/item1.png" alt="">
                     <div class="overlay">
                         <div class="recent-work-inner">
-                            <h3><a href="#">Yii for bbs</a> </h3>
-                            <p>这是一款用yii搭建的bbs/blog/site一起化的个人网站，如果有需要可以直接从Github上clone<br/>URL:https://github.com/v-sir/yiiForBlog </p>
+                            <h3><a href="#">Yii for bbs</a></h3>
+                            <p>这是一款用yii搭建的bbs/blog/site一起化的个人网站，如果有需要可以直接从Github上clone<br/>URL:https://github.com/v-sir/yiiForBlog
+                            </p>
 
                             <a class="preview" href="image/o1.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
                         </div>
@@ -475,6 +480,7 @@
                                         <div class="media-body">
                                             <h2>黄炜</h2>
                                             <p>一个PHP爱好者</p>
+                                            <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=yb-kuqC7ibyrqK2rqK3nqqo" style="text-decoration:none;"><img src="http://rescdn.qqmail.com/zh_CN/htmledition/images/function/qm_open/ico_mailme_01.png"/></a>
                                         </div>
                                     </div>
                                 </div>
@@ -524,7 +530,6 @@
                             <span><strong>-站长/</strong> ubadbad.cc</span>
                         </div>
                     </div>
-
 
 
                 </div>
