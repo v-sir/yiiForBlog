@@ -100,7 +100,7 @@
                     <div class="feature-wrap">
                         <i class="fa fa-envelope-o"></i>
                         <h2>邮箱</h2>
-                        <h3>694299993@qq.com</h3><h3>hwstudio00@gmail.com</h3>
+                        <h3>studio@ubadbad.cc</h3><h3>v-sir@ubadbad.cc</h3>
                     </div>
                 </div><!--/.col-md-4-->
 
