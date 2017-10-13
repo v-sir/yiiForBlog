@@ -305,6 +305,11 @@ class SiteController extends Controller
         file_put_contents($file, $line, FILE_APPEND);
     }
 
+    /**
+     * Dev test
+     * @throws \Exception
+     *
+     */
     public function actionTest()
     {
 
