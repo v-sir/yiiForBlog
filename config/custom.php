@@ -16,5 +16,14 @@ return [
         'urlManager' => [
             'showScriptName' => true,
         ],
+        'db' => [
+            'dsn' => 'mysql:host=localhost;dbname=bbs',
+            'username' => 'root',
+            'password' => 'hehe.233.666',
+            'slaveConfig' => [
+                'username' => 'root',
+                'password' => '',
+            ],
+        ],
     ],
 ];
